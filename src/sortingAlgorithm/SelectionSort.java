@@ -1,23 +1,26 @@
 package sortingAlgorithm;
 
-public class BubbleSort {
+public class SelectionSort {
 
 	public static void main(String[] args) {
-		// This is Bubble sorting algorithm
+		// This is Selection Sorting algorithm
 		
 		int[] sort = { 20, 35, -15, 7, 55, 1, -22 };
 		
 	for(int lastUnsortedIndex = sort.length-1 ; lastUnsortedIndex >0 ; lastUnsortedIndex--) {
-		for(int i =0; i< lastUnsortedIndex ; i++) {
+		
+		int largest = 0;
+		for(int i =0; i<= lastUnsortedIndex ; i++) {
 			
-			if(sort[i]>sort[i+1]) {
+			if(sort[i] > sort[largest]) {
 				
-				swap(sort, i, i+1);
-			
+				largest =i;
 			}
 			
 		}
+		swap(sort , largest , lastUnsortedIndex);
 	}
+	
 	
     for(int i=0; i < sort.length; i++) {
     	System.out.println(sort[i]);
@@ -39,5 +42,6 @@ public class BubbleSort {
 		array[j] = temp;
 		
 	}
+
 
 }
